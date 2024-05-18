@@ -17,4 +17,8 @@ class RecipesController < ApplicationController
       flash[:error] = "Failed to create recipe"
     end
   end
+  
+  def new
+    @recipe = Recipe.new
+  end
 end

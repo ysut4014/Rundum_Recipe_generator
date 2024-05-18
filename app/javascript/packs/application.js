@@ -16,3 +16,5 @@ import "../stylesheets/application";
 Rails.start()
 Turbolinks.start()
 ActiveStorage.start()
+// packs/application.js
+import "../stylesheets/application";

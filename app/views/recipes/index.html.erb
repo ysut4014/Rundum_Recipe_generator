@@ -3,7 +3,10 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100vh;
+  min-height: 100vh; /* 最低でも画面の高さいっぱいに広がるようにする */
+  max-width: 800px; /* コンテナの幅を制限 */
+  margin: 20px auto 0; /* コンテナを上部に寄せ、水平方向に中央に配置 */
+  padding: 0 20px; /* コンテナの内側の余白 */
 }
 
 .recipe {
@@ -13,6 +16,10 @@
 .recipe img {
   max-width: 100%;
   height: auto;
+  margin-top: 20px;
+}
+
+.add-button {
   margin-top: 20px;
 }
 </style>
@@ -32,5 +39,10 @@
     <% else %>
       <p><%= t('recipes.index.fetch_failed') %></p> <!-- レシピが取得できなかった場合のメッセージ -->
     <% end %>
+
+    <!-- 追加ボタン -->
+<div class="add-button">
+  <%= link_to t('recipes.index.add_button'), histories_path, class: "btn btn-primary" %>
+</div>
   </div>
 </div>
