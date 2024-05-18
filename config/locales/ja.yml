@@ -1,0 +1,9 @@
+ja:
+  recipes:
+    index:
+      title: "選択されたレシピ"
+      fetch_failed: "レシピの取得に失敗しました"
+      recipe:
+        title: "タイトル"
+        description: "説明"
+        image_alt: "レシピ画像"

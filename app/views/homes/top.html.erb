@@ -1,0 +1,40 @@
+<style>
+.button {
+  display: inline-block;
+  padding: 50px 100px; /* 上下に50pxの余白、左右に100pxの余白 */
+  font-size: 40px; /* スマートフォンではより小さなフォントサイズを使用 */
+  text-align: center;
+  text-decoration: none;
+  color: black;
+  background-color: #ffffff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.button:hover {
+  background-color: rgba(128, 128, 128, 0.1); /* より透明な薄いグレーに変更 */
+}
+
+@media (max-width: 767px) {
+  .button {
+    display: block;
+    margin: 0 auto; /* 横方向のマージンを自動で設定して中央に配置 */
+    padding: 20px; /* スマートフォンではより小さな余白を使用 */
+    font-size: 30px; /* スマートフォンではより小さなフォントサイズを使用 */
+    color: #ffffff; /* ボタンの文字色を白に変更 */
+    background-color: #007bff; /* ボタンの背景色を青に変更 */
+  }
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+</style>
+
+<div class="container">
+  <a href="<%= recipes_path %>" class="button">レシピを決める</a>
+</div>

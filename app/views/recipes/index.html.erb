@@ -1,0 +1,36 @@
+<style>
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.recipe {
+  text-align: left; /* テキストを左揃えにする */
+}
+
+.recipe img {
+  max-width: 100%;
+  height: auto;
+  margin-top: 20px;
+}
+</style>
+
+<div class="container">
+  <div class="recipe">
+    <h1><%= t('recipes.index.title') %></h1>
+
+    <% if @recipe %>
+      <h2><%= @recipe.title %></h2> <!-- レシピのタイトルを表示 -->
+      <p><%= @recipe.description %></p> <!-- レシピの説明を表示 -->
+      <% if @recipe.image_url.present? %>
+        <%= image_tag @recipe.image_url, alt: t('recipes.index.recipe.image_alt') %> <!-- 画像があれば表示 -->
+      <% else %>
+        <p><%= t('recipes.index.no_image_available') %></p> <!-- 画像がない場合のメッセージ -->
+      <% end %>
+    <% else %>
+      <p><%= t('recipes.index.fetch_failed') %></p> <!-- レシピが取得できなかった場合のメッセージ -->
+    <% end %>
+  </div>
+</div>
